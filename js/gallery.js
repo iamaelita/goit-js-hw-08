@@ -9,7 +9,7 @@ import galleryItems from '../gallery-items.js';
 // Закрытие модального окна по клику на кнопку button[data-action="close-lightbox"].
 // Очистка значения атрибута src элемента img.lightbox__image. Это необходимо для того, чтобы при следующем открытии модального окна, пока грузится изображение, мы не видели предыдущее.
 
-
+// Ссылки на элементы
 const refs = {
   gallery: document.querySelector('.js-gallery'),
   lightbox: document.querySelector('.js-lightbox'),
@@ -20,8 +20,8 @@ const refs = {
   ),
 };
 
-const galleryMarkup = makeGalleryMarkup(galleryItems); 
-refs.gallery.insertAdjacentHTML('afterbegin', galleryMarkup); //
+const galleryMarkup = makeGalleryMarkup(galleryItems); // Переменная с отрендеренной разметкой
+refs.gallery.insertAdjacentHTML('afterbegin', galleryMarkup); // Добавляет разметку в галлерею
 
 refs.gallery.addEventListener('click', onModalOpen);
 refs.lightbox.addEventListener('click', changeLightboxImage);
